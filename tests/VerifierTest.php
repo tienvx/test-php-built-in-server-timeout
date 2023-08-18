@@ -22,7 +22,8 @@ class VerifierTest extends TestCase
         $this->process = new Process(['php', '-S', '127.0.0.1:7202', '-t', $publicPath]);
 
         $this->process->start();
-        $this->process->waitUntil(function (): bool {
+        $this->process->waitUntil(function (string $type, string $data): bool {
+            fwrite(STDERR, "DEBUG $type --> $data\n");
             $fp = @fsockopen('127.0.0.1', 7202);
             $isOpen = is_resource($fp);
             if ($isOpen) {
