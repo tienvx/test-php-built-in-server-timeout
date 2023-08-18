@@ -17,7 +17,7 @@ class VerifierTest extends TestCase
      */
     protected function setUp(): void
     {
-        $publicPath    =  __DIR__ . '/../../../_public/';
+        $publicPath    =  __DIR__ . '/_public';
 
         $this->process = new Process(['php', '-S', '127.0.0.1:7202', '-t', $publicPath]);
 
@@ -55,7 +55,7 @@ class VerifierTest extends TestCase
         }
 
         $verifier = new Verifier($config);
-        $verifier->addDirectory(__DIR__ . '/../../../_resources');
+        $verifier->addDirectory(__DIR__ . '/_resources');
 
         $verifyResult = $verifier->verify();
 
