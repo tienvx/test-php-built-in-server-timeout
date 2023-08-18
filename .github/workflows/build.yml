@@ -1,4 +1,4 @@
-name: Test Memory Error Windows Server
+name: Test PHP Built-in Server Timeout
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
         php: [ '8.0', '8.1', '8.2' ]
         os: [ 'windows-2022', 'windows-latest' ]
 
-    name: PHP ${{ matrix.php }} ${{ matrix.os }} first
+    name: PHP ${{ matrix.php }} ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v3
