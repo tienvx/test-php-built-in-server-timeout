@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         php: [ '8.0', '8.1', '8.2' ]
-        os: [ 'windows-2022', 'windows-latest' ]
+        os: [ 'windows-2022', 'windows-latest', 'windows-2019' ]
 
     name: PHP ${{ matrix.php }} ${{ matrix.os }}
 
