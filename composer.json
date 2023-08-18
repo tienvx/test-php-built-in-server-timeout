@@ -1,0 +1,15 @@
+{
+    "name": "tien/test-php-built-in-server-timeout",
+    "type": "project",
+    "require": {
+        "pact-foundation/pact-php": "10.0.0-alpha.2"
+    },
+    "scripts": {
+        "test": "phpunit --debug"
+    },
+    "config": {
+        "allow-plugins": {
+            "tienvx/composer-downloads-plugin": true
+        }
+    }
+}

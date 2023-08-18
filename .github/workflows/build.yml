@@ -1,0 +1,31 @@
+name: Test Memory Error Windows Server
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        php: [ '8.0', '8.1', '8.2' ]
+        os: [ 'windows-2022', 'windows-latest' ]
+
+    name: PHP ${{ matrix.php }} ${{ matrix.os }} first
+
+    steps:
+      - uses: actions/checkout@v3
+        name: Checkout repository
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          extensions: sockets, curl, zip, ffi
+          php-version: ${{ matrix.php }}
+          coverage: none
+
+      - name: Composer install
+        uses: ramsey/composer-install@v2
+
+      - name: Composer test
+        run: composer test
