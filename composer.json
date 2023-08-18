@@ -2,7 +2,8 @@
     "name": "tien/test-php-built-in-server-timeout",
     "type": "project",
     "require": {
-        "pact-foundation/pact-php": "10.0.0-alpha.2"
+        "pact-foundation/pact-php": "10.0.0-alpha.2",
+        "phpunit/phpunit": ">=8.5.23 <10"
     },
     "scripts": {
         "test": "phpunit --debug"
